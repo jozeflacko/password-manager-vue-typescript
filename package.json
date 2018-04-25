@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "start": "vue-cli-service serve",
+    "start": "node server.js",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.8",
+    "express": "^4.16.3",
     "firebase": "^4.13.1",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.13",
