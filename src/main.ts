@@ -6,9 +6,10 @@ import './registerServiceWorker';
 import BootstrapVue from 'bootstrap-vue';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import FirebaseProvider from './services/firebase/firebaseProvider';
+import FirebaseProvider from './firebase/firebaseProvider';
 import Triggers from './store/triggers';
 import { Navigation } from './router';
+import { initAppGlobalsOnWindow } from './general';
 
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
@@ -19,6 +20,8 @@ const vue = new Vue({
   store,
   render: (h) => h(App),
 }).$mount('#app');
+
+initAppGlobalsOnWindow();
 
 FirebaseProvider.start((user:any)=>{
   if(! store) {

@@ -19,6 +19,6 @@ import Content from './Content.vue';
   },
 })
 export default class Overview extends Vue {
-
+  
 }
 </script>

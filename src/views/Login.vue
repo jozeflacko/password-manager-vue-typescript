@@ -54,7 +54,6 @@ import { Component, Vue } from 'vue-property-decorator';
 import { Navigation } from '../router';
 import Triggers from '../store/triggers';
 import firebase from 'firebase';
-import Globals from '../globals';
 
 @Component({
   components: {},
@@ -69,14 +68,14 @@ export default class Login extends Vue {
   private passwordError: string = "";
 
   created() {
-    this.appName = Globals.APP_NAME;
+    this.appName = 'TODO';
   }
 
   updatePropertyEmail(event:Event) {
-    this.email = (<HTMLTextAreaElement>event.target).value;
+    this.email = (<HTMLInputElement>event.target).value;
   }
   updatePropertyPassword(event:Event) {
-    this.password = (<HTMLTextAreaElement>event.target).value;
+    this.password = (<HTMLInputElement>event.target).value;
   }
 
   goToSingin(event: Event): void  {
@@ -87,7 +86,6 @@ export default class Login extends Vue {
   login() {
     firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
       (data)=>{
-        alert('SUCCESS'),
         console.log(data);       
       },      
       ({code, message})=>{

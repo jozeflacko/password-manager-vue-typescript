@@ -65,7 +65,6 @@ import { Component, Vue } from 'vue-property-decorator';
 import { Navigation } from '../router';
 import Triggers from '../store/triggers';
 import firebase from 'firebase';
-import Globals from '../globals';
 
 @Component({
   components: {},
@@ -82,7 +81,8 @@ export default class Signin extends Vue {
   private repeatPasswordError: string = "";
 
   created() {
-    this.appName = Globals.APP_NAME;
+    this.appName = 'TODO';
+ 
   }
 
   updatePropertyEmail(event:Event): void {
